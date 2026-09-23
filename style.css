@@ -1,0 +1,593 @@
+/* =============================================================
+   CAMPUS CYBER SHIELD : STYLES
+   ============================================================= */
+
+:root {
+  --navy: #1e3a8a;
+  --navy-light: #e0e7ff;
+  --red: #dc2626;
+  --red-light: #fee2e2;
+  --green: #15803d;
+  --green-light: #dcfce7;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --bg: #f1f5f9;
+  --white: #ffffff;
+  --border: #d1d5db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- Top bar & footer ---------- */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.score-box {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 16px;
+}
+
+h1 {
+  color: var(--navy);
+  margin-top: 8px;
+}
+
+.lead {
+  font-size: 1.05rem;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  font: inherit;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid var(--navy);
+  background: var(--white);
+  color: var(--navy);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--navy-light);
+}
+
+.btn.primary {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.btn.primary:hover {
+  background: #1e40af;
+}
+
+.btn.big {
+  flex: 1;
+  font-size: 1.15rem;
+  padding: 14px;
+}
+
+.btn.safe {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.btn.safe:hover {
+  background: var(--green-light);
+}
+
+.btn.danger {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.btn.danger:hover {
+  background: var(--red-light);
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+/* ---------- Start screen ---------- */
+
+.how-box {
+  background: var(--white);
+  border-left: 5px solid var(--navy);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.demo-link {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+input {
+  font: inherit;
+  padding: 10px;
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-top: 4px;
+}
+
+.bank-info {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Quiz screen ---------- */
+
+.progress {
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--navy);
+  transition: width 0.3s;
+}
+
+.counter {
+  color: var(--muted);
+  margin: 6px 0;
+}
+
+.situation {
+  background: #fef9c3;
+  border: 1px solid #fde047;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+/* The message card: looks like an SMS, email or WhatsApp chat */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.channel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+.from {
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.label {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.subject {
+  padding: 8px 16px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+
+.body {
+  padding: 14px 16px;
+  word-break: break-word;
+}
+
+.attachment {
+  margin: 0 16px 14px;
+  padding: 8px 12px;
+  background: #f3f4f6;
+  border: 1px dashed #9ca3af;
+  border-radius: 8px;
+  font-family: Consolas, monospace;
+}
+
+/* SMS style */
+.card.sms .card-head {
+  background: #f3f4f6;
+}
+
+.card.sms .body {
+  background: #e5e7eb;
+  margin: 14px;
+  border-radius: 16px 16px 16px 4px;
+}
+
+/* Email style */
+.card.email .card-head {
+  background: #eff6ff;
+}
+
+/* WhatsApp style */
+.card.whatsapp .card-head {
+  background: #075e54;
+  color: var(--white);
+}
+
+.card.whatsapp {
+  background: #ece5dd;
+}
+
+.card.whatsapp .body {
+  background: var(--white);
+  margin: 14px;
+  border-radius: 4px 16px 16px 16px;
+}
+
+/* Links inside messages are NOT real links: they only show their address */
+.link {
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: help;
+}
+
+.link-peek {
+  font-family: Consolas, monospace;
+  font-size: 0.9rem;
+  background: #1f2937;
+  color: #f9fafb;
+  padding: 6px 12px;
+  border-radius: 6px;
+  min-height: 1.5em;
+  word-break: break-all;
+}
+
+.link-peek:empty {
+  display: none;
+}
+
+/* Highlights are invisible until the player answers */
+mark {
+  background: none;
+  color: inherit;
+}
+
+.card.revealed mark.red-flag {
+  background: #fecaca;
+  color: #7f1d1d;
+  border-bottom: 2px solid var(--red);
+  border-radius: 3px;
+}
+
+.card.revealed mark.trust {
+  background: #bbf7d0;
+  color: #14532d;
+  border-bottom: 2px solid var(--green);
+  border-radius: 3px;
+}
+
+/* After answering, each disguised link shows its real address */
+.card.revealed .link.disguised::after {
+  content: "\2192  " attr(data-real);
+  margin-left: 6px;
+  font-family: Consolas, monospace;
+  font-size: 0.85em;
+  color: var(--muted);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.card.revealed .red-flag .link.disguised::after {
+  color: var(--red);
+}
+
+.card.revealed .trust .link.disguised::after {
+  color: var(--green);
+}
+
+.answer-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* ---------- Feedback box ---------- */
+
+.feedback {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: var(--white);
+  border-left: 6px solid var(--navy);
+}
+
+.feedback.good {
+  border-left-color: var(--green);
+}
+
+.feedback.good h3 {
+  color: var(--green);
+}
+
+.feedback.bad {
+  border-left-color: var(--red);
+}
+
+.feedback.bad h3 {
+  color: var(--red);
+}
+
+.feedback h3 {
+  margin: 4px 0;
+}
+
+.legend {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.legend mark.red-flag {
+  background: #fecaca;
+}
+
+.legend mark.trust {
+  background: #bbf7d0;
+}
+
+.feedback ul {
+  padding-left: 18px;
+}
+
+.feedback li {
+  margin-bottom: 8px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 1px 8px;
+  border-radius: 10px;
+  color: var(--white);
+  margin-right: 4px;
+}
+
+.tag-S { background: #7c3aed; }
+.tag-L { background: #2563eb; }
+.tag-A { background: #ea580c; }
+.tag-M { background: #0f766e; }
+
+.tip {
+  background: var(--navy-light);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* ---------- Results ---------- */
+
+.badge {
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: var(--navy);
+  color: var(--white);
+  padding: 8px 18px;
+  border-radius: 30px;
+}
+
+.big-score {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 10px 0;
+  color: var(--navy);
+}
+
+.big-score span {
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex: 1;
+  min-width: 140px;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.stat b {
+  display: block;
+  font-size: 1.6rem;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.stat-danger b {
+  color: var(--red);
+}
+
+.note {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.review {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  font-size: 0.92rem;
+}
+
+.review th,
+.review td {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.review th {
+  background: var(--navy-light);
+}
+
+.row-good td:last-child {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.row-bad {
+  background: #fff1f2;
+}
+
+.row-bad td:last-child {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.remember {
+  background: var(--white);
+  border-left: 5px solid var(--navy);
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+/* ---------- Red Flag Guide ---------- */
+
+.slam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.slam-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+}
+
+.slam-card ul {
+  padding-left: 18px;
+}
+
+.slam-letter {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  margin-right: 6px;
+}
+
+.golden {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 10px;
+  padding: 4px 18px;
+  margin: 16px 0;
+}
+
+code {
+  background: #f3f4f6;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Small screens (phones) ---------- */
+
+@media (max-width: 520px) {
+  .answer-buttons {
+    flex-direction: column;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .big-score {
+    font-size: 2rem;
+  }
+
+  .slam-grid {
+    grid-template-columns: 1fr;
+  }
+}

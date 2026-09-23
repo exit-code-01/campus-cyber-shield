@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Cyber Shield</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo">🛡️ Campus Cyber Shield</div>
+    <div id="scoreBox" class="score-box hidden">Score: <b id="score">0</b></div>
+  </header>
+
+  <main>
+
+    <!-- ============ 1. START SCREEN ============ -->
+    <section id="startScreen" class="screen">
+      <h1>Can you spot the scam?</h1>
+      <p class="lead">
+        You will see <b>12 real-looking messages</b> (SMS, emails and WhatsApp chats) that students
+        in India actually receive. Some are <b>genuine</b>, some are <b>phishing</b>.
+        Decide which is which. After every answer you will see the red flags that give a scam away.
+      </p>
+
+      <div class="how-box">
+        <p><b>How to play</b></p>
+        <ol>
+          <li>Read the <b>situation</b> and the message carefully.</li>
+          <li>Hover over (or tap) any <span class="demo-link">blue link</span> to see where it <i>really</i> goes.</li>
+          <li>Choose <b>✅ Genuine</b> or <b>🚩 Phishing</b>.</li>
+          <li>Learn from the explanation, then go to the next message.</li>
+        </ol>
+      </div>
+
+      <label for="playerName">Your name</label>
+      <input id="playerName" type="text" maxlength="20" placeholder="e.g. Sneha">
+
+      <div class="button-row">
+        <button id="startBtn" class="btn primary">Start Round ▶</button>
+        <button id="guideBtn" class="btn">📖 Red Flag Guide</button>
+      </div>
+      <p id="bankInfo" class="bank-info"></p>
+    </section>
+
+    <!-- ============ 2. QUIZ SCREEN ============ -->
+    <section id="quizScreen" class="screen hidden">
+      <div class="progress"><div id="progressFill" class="progress-fill"></div></div>
+      <p id="counter" class="counter">Message 1 of 12</p>
+
+      <p id="situation" class="situation"></p>
+
+      <div id="messageCard" class="card"></div>
+      <p id="linkPeek" class="link-peek"></p>
+
+      <div id="answerButtons" class="answer-buttons">
+        <button id="genuineBtn" class="btn big safe">✅ Genuine</button>
+        <button id="phishingBtn" class="btn big danger">🚩 Phishing</button>
+      </div>
+
+      <div id="feedback" class="feedback hidden"></div>
+    </section>
+
+    <!-- ============ 3. RESULT SCREEN ============ -->
+    <section id="resultScreen" class="screen hidden"></section>
+
+    <!-- ============ 4. RED FLAG GUIDE ============ -->
+    <section id="guideScreen" class="screen hidden">
+      <h1>📖 Red Flag Guide: the SLAM method</h1>
+      <p class="lead">Before you click or reply, <b>SLAM</b> the message: check these 4 things.</p>
+
+      <div class="slam-grid">
+        <div class="slam-card">
+          <h3><span class="slam-letter">S</span> Sender</h3>
+          <ul>
+            <li>Check the <b>real address or number</b>, not just the display name.</li>
+            <li>Look-alike spellings: <code>lnstagram</code>, <code>amaz0n</code>.</li>
+            <li>Official bodies don't use Gmail/Outlook addresses.</li>
+            <li>Banks send SMS from sender IDs like <code>JM-SBIBNK-T</code>, never from a 10-digit mobile number.</li>
+          </ul>
+        </div>
+        <div class="slam-card">
+          <h3><span class="slam-letter">L</span> Links</h3>
+          <ul>
+            <li><b>Hover or long-press</b> to see where a link really goes.</li>
+            <li>Read the website name <b>from the right</b>: in <code>indiapost.gov.in-track.top</code> the real owner is <code>in-track.top</code>.</li>
+            <li>Indian government sites end in <code>.gov.in</code> / <code>.nic.in</code>; banks now use <code>.bank.in</code>.</li>
+            <li>Short links (bit.ly etc.) hide the destination.</li>
+          </ul>
+        </div>
+        <div class="slam-card">
+          <h3><span class="slam-letter">A</span> Attachments</h3>
+          <ul>
+            <li>Never open <code>.apk</code>, <code>.exe</code>, <code>.html</code> or <code>.zip</code> files from unknown senders.</li>
+            <li>A "wedding card" or "question paper" ending in <code>.apk</code> is an <b>app</b>, not a document.</li>
+            <li>Install apps only from the Play Store / App Store.</li>
+          </ul>
+        </div>
+        <div class="slam-card">
+          <h3><span class="slam-letter">M</span> Message</h3>
+          <ul>
+            <li><b>Urgency or threats</b>: "blocked today", "within 24 hours".</li>
+            <li><b>Too good to be true</b>: prizes, easy money, scholarships you never applied for.</li>
+            <li>Asks for <b>OTP, UPI PIN, password</b> or a "fee".</li>
+            <li>Generic greeting ("Dear Customer"), spelling mistakes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="golden">
+        <h3>🌟 Golden rules</h3>
+        <ul>
+          <li>Never share an <b>OTP</b> or <b>UPI PIN</b> with anyone, not even friends or "bank officers".</li>
+          <li>You <b>never</b> need a UPI PIN to <b>receive</b> money.</li>
+          <li>When in doubt, don't click. Open the official app or type the website yourself.</li>
+          <li>Ask: <i>"What does this message want me to DO?"</i></li>
+        </ul>
+        <h3>📞 Where to report (India)</h3>
+        <ul>
+          <li>Lost money? Call <b>1930</b> immediately or report at <b>cybercrime.gov.in</b></li>
+          <li>Suspicious call / SMS / WhatsApp (no money lost)? Report on <b>Chakshu</b> at sancharsaathi.gov.in</li>
+        </ul>
+      </div>
+
+      <button id="guideBackBtn" class="btn primary">← Back</button>
+    </section>
+
+  </main>
+
+  <footer>Stay alert. Lost money to a scam? Call <b>1930</b> (National Cyber Crime Helpline) or visit cybercrime.gov.in</footer>
+
+  <!-- messages.js must load first: it holds the message bank used by app.js -->
+  <script src="messages.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

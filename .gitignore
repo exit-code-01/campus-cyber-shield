@@ -1,0 +1,14 @@
+# Zipped copy of the app for submission (the repo already has the files)
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor settings
+.vscode/
+.idea/
+
+# Office lock files
+~$*
